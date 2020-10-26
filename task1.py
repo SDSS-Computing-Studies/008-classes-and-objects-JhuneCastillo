@@ -25,14 +25,54 @@ constructor     - should require the student name, studentNumber and grade (in t
 class student:
 
     # properties should be listed first
+    name = ""
+    studentNumber = ""
+    grade = 0
+    listCourses = []
+    listGrades = []
 
-    def __init__(): # You will need to create your own input parameters for all methods
-        pass
-
-    def __del__():
-        pass
+    def __init__(self, name, studentNumber, grade, listCourses, listGrades): # You will need to create your own input parameters for all methods
+        self.name = name
+        self.studentNumber = studentNumber
+        self.grade = grade
+        self.listCourses = listCourses
+        self.listGrades = listGrades
+    
 
     def average(self):
+        averageGrade = sum(self.listGrades) / len(self.listGrades)
+        print(averageGrade)
+
+    def getHonorRoll(self):
+        self.listGrades.sort()
+        self.listGrades.reverse()
+        averageGrades5 = (self.listGrades[0] + self.listGrades[1] + self.listGrades[2] + self.listGrades[3] + self.listGrades[4]) / 5
+        if averageGrades5 >= 86:
+            return True
+        else:
+            return False
+
+    def showCourses(self):
+        print(self.listCourses) 
+    
+    def index(self):
+        index = input("Enter a index: ")
+        return int(index)
+
+    def showGrade(self, index):
+        print(self.listCourses[index])
+        print(self.listGrades[index])
+        
+    def getCourses(self):
+        self.listCourses 
+    
+    def getGrades(self, listGrades):
+        self.listGrades
+
+    def constructor(self):
+        print(self.name + " " + str(self.studentNumber) + " " + self.grade)
+
+    def __del__():
         pass
 
 def main():
