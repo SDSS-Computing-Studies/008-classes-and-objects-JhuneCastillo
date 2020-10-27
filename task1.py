@@ -39,6 +39,8 @@ class student:
         self.grade = grade
         self.listCourses = listCourses
         self.listGrades = listGrades
+        print("Name: " + self.name + ", Student #: " +
+              str(self.studentNumber) + ", Grade: " + str(self.grade))
 
     def average(self):
         averageGrade = sum(self.listGrades) / len(self.listGrades)
@@ -47,7 +49,8 @@ class student:
     def getHonorRoll(self):
         self.listGrades.sort()
         self.listGrades.reverse()
-        averageGrades5 = (self.listGrades[0] + self.listGrades[1] + self.listGrades[2] + self.listGrades[3] + self.listGrades[4]) / 5
+        averageGrades5 = (self.listGrades[0] + self.listGrades[1] +
+                          self.listGrades[2] + self.listGrades[3] + self.listGrades[4]) / 5
         if averageGrades5 >= 86:
             return True
         else:
@@ -70,8 +73,8 @@ class student:
     def getGrades(self, listGrades):
         self.listGrades = listGrades
 
-    def constructor(self):
-        print(self.name + " " + str(self.studentNumber) + " " + self.grade)
+    def __del__(self):
+        print("Goodbye " + self.name)
 
 
 def main():
